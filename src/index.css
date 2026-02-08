@@ -1,0 +1,290 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Design system: all colors, gradients, shadows, etc.
+   All colors are HSL-based.
+*/
+
+@layer base {
+  :root {
+    /* Core surfaces & text */
+    --background: 245 22% 8%;          /* deep indigo / charcoal */
+    --foreground: 210 40% 96%;         /* soft off-white */
+
+    --card: 245 22% 12%;
+    --card-foreground: 210 40% 96%;
+
+    --popover: 245 22% 12%;
+    --popover-foreground: 210 40% 96%;
+
+    /* 🌸 Primary – Soft Pink / Magenta */
+    --primary: 330 82% 68%;            /* main magenta pink */
+    --primary-foreground: 260 40% 8%;  /* dark plum text on primary */
+
+    /* Secondary – Purple */
+    --secondary: 270 65% 55%;          /* rich violet */
+    --secondary-foreground: 210 40% 96%;
+
+    /* Muted surfaces & text */
+    --muted: 240 15% 18%;
+    --muted-foreground: 215 18% 72%;
+
+    /* Accent – warm peach/amber */
+    --accent: 20 92% 66%;
+    --accent-foreground: 230 25% 10%;
+
+    /* Feedback */
+    --destructive: 0 72% 55%;
+    --destructive-foreground: 210 40% 98%;
+
+    /* Borders & focus */
+    --border: 248 18% 24%;
+    --input: 248 18% 24%;
+    --ring: 330 82% 68%;               /* magenta ring */
+
+    /* Portfolio-specific tokens */
+    --primary-glow: 330 90% 72%;       /* brighter pink for glow */
+    --background-subtle: 245 22% 10%;  /* slightly lighter background */
+    --text-muted: 215 18% 72%;
+
+    /* Gradients */
+    --gradient-primary: linear-gradient(
+      135deg,
+      hsl(330 82% 68%),
+      hsl(270 65% 55%)
+    );
+
+    --gradient-background: linear-gradient(
+      135deg,
+      hsl(245 22% 8%),
+      hsl(260 25% 12%)
+    );
+
+    --gradient-card: linear-gradient(
+      145deg,
+      hsl(245 22% 12%),
+      hsl(250 22% 18%)
+    );
+
+    /* Modern gradients */
+    --gradient-hero: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    --gradient-purple: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    --gradient-pink: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+
+    /* Shadows */
+    --shadow-glow: 0 0 40px hsl(330 82% 68% / 0.5);
+    --shadow-card: 0 18px 40px -18px hsl(0 0% 0% / 0.65);
+    --shadow-hero: 0 25px 50px -12px rgba(102, 126, 234, 0.25);
+
+    /* Radius */
+    --radius: 0.5rem;
+
+    /* Sidebar (if you use it anywhere) */
+    --sidebar-background: 245 22% 9%;
+    --sidebar-foreground: 210 40% 96%;
+    --sidebar-primary: 330 82% 68%;
+    --sidebar-primary-foreground: 260 40% 8%;
+    --sidebar-accent: 270 65% 55%;
+    --sidebar-accent-foreground: 210 40% 96%;
+    --sidebar-border: 248 18% 24%;
+    --sidebar-ring: 330 82% 68%;
+  }
+
+  .dark {
+    /* Same palette in dark mode (site is dark-first) */
+    --background: 245 22% 8%;
+    --foreground: 210 40% 96%;
+
+    --card: 245 22% 12%;
+    --card-foreground: 210 40% 96%;
+
+    --popover: 245 22% 12%;
+    --popover-foreground: 210 40% 96%;
+
+    --primary: 330 82% 68%;
+    --primary-foreground: 260 40% 8%;
+
+    --secondary: 270 65% 55%;
+    --secondary-foreground: 210 40% 96%;
+
+    --muted: 240 15% 18%;
+    --muted-foreground: 215 18% 72%;
+
+    --accent: 20 92% 66%;
+    --accent-foreground: 230 25% 10%;
+
+    --destructive: 0 72% 55%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 248 18% 24%;
+    --input: 248 18% 24%;
+    --ring: 330 82% 68%;
+
+    --primary-glow: 330 90% 72%;
+    --background-subtle: 245 22% 10%;
+    --text-muted: 215 18% 72%;
+
+    --gradient-primary: linear-gradient(
+      135deg,
+      hsl(330 82% 68%),
+      hsl(270 65% 55%)
+    );
+
+    --gradient-background: linear-gradient(
+      135deg,
+      hsl(245 22% 8%),
+      hsl(260 25% 12%)
+    );
+
+    --gradient-card: linear-gradient(
+      145deg,
+      hsl(245 22% 12%),
+      hsl(250 22% 18%)
+    );
+
+    --gradient-hero: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    --gradient-purple: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    --gradient-pink: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+
+    --shadow-glow: 0 0 40px hsl(330 82% 68% / 0.5);
+    --shadow-card: 0 18px 40px -18px hsl(0 0% 0% / 0.65);
+    --shadow-hero: 0 25px 50px -12px rgba(102, 126, 234, 0.25);
+
+    --sidebar-background: 245 22% 9%;
+    --sidebar-foreground: 210 40% 96%;
+    --sidebar-primary: 330 82% 68%;
+    --sidebar-primary-foreground: 260 40% 8%;
+    --sidebar-accent: 270 65% 55%;
+    --sidebar-accent-foreground: 210 40% 96%;
+    --sidebar-border: 248 18% 24%;
+    --sidebar-ring: 330 82% 68%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    background: var(--gradient-background);
+    min-height: 100vh;
+  }
+
+  /* Glowing text (e.g., your name in hero) */
+  .glow-text {
+    text-shadow: 0 0 38px hsl(var(--primary) / 0.75);
+  }
+
+  /* Extra drop-shadow glow if you want stronger effect */
+  .hero-glow {
+    filter: drop-shadow(0 0 40px hsl(var(--primary) / 0.7));
+  }
+
+  /* Card glow used on experience/project cards */
+  .card-glow {
+    box-shadow: var(--shadow-card), var(--shadow-glow);
+    background-image: var(--gradient-card);
+  }
+
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+  }
+
+  .animate-pulse-glow {
+    animation: pulse-glow 2.2s ease-in-out infinite;
+  }
+
+  @keyframes pulse-glow {
+    0%, 100% {
+      box-shadow: var(--shadow-card);
+    }
+    50% {
+      box-shadow: var(--shadow-card), var(--shadow-glow);
+    }
+  }
+
+  /* Modern animations */
+  .animate-slide-up {
+    animation: slide-up 0.8s ease-out;
+  }
+
+  @keyframes slide-up {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .animate-fade-in {
+    animation: fade-in 1s ease-out;
+  }
+
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  .animate-scale-in {
+    animation: scale-in 0.5s ease-out;
+  }
+
+  @keyframes scale-in {
+    from {
+      opacity: 0;
+      transform: scale(0.9);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  /* Modern card styles */
+  .modern-card {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+  }
+
+  .modern-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(102, 126, 234, 0.15);
+  }
+
+  /* Gradient text */
+  .gradient-text {
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+  }
+
+  /* Glass morphism effect */
+  .glass {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+  }
+}
